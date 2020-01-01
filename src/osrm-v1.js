@@ -3,7 +3,7 @@
 
 	var L = require('leaflet'),
 		corslite = require('@mapbox/corslite'),
-		polyline = require('@mapbox/polyline'),
+		polyline = require('@mapbox/polyline');
 		//osrmTextInstructions = require('osrm-text-instructions')('v5');
 
 	// Ignore camelcase naming for this file, since OSRM's API uses
