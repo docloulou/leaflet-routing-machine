@@ -4,7 +4,7 @@
 	var L = require('leaflet'),
 		corslite = require('@mapbox/corslite'),
 		polyline = require('@mapbox/polyline'),
-		osrmTextInstructions = require('osrm-text-instructions')('v5');
+		//osrmTextInstructions = require('osrm-text-instructions')('v5');
 
 	// Ignore camelcase naming for this file, since OSRM's API uses
 	// underscores.
@@ -199,7 +199,7 @@
 			if (this.options.stepToText) {
 				stepToText = this.options.stepToText;
 			} else {
-				stepToText = L.bind(osrmTextInstructions.compile, osrmTextInstructions, this.options.language);
+				//stepToText = L.bind(osrmTextInstructions.compile, osrmTextInstructions, this.options.language);
 			}
 
 			for (i = 0; i < legCount; i++) {
@@ -211,7 +211,7 @@
 					result.coordinates.push.apply(result.coordinates, geometry);
 					type = this._maneuverToInstructionType(step.maneuver, i === legCount - 1);
 					modifier = this._maneuverToModifier(step.maneuver);
-					text = stepToText(step, {legCount: legCount, legIndex: i});
+					//text = stepToText(step, {legCount: legCount, legIndex: i});
 
 					if (type) {
 						if ((i == 0 && step.maneuver.type == 'depart') || step.maneuver.type == 'arrive') {
@@ -228,7 +228,7 @@
 							index: index,
 							mode: step.mode,
 							modifier: modifier,
-							text: text
+							text: null
 						});
 					}
 
